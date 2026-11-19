@@ -1,0 +1,12 @@
+// Añadir a app/build.gradle.kts (junto a lo que ya hay)
+android {
+    buildFeatures {
+        viewBinding = true
+    }
+}
+
+dependencies {
+    implementation(libs.recyclerview)
+    implementation(libs.room.runtime)
+    annotationProcessor(libs.room.compiler)
+}

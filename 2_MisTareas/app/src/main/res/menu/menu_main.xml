@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Menú de opciones: acciones generales de la pantalla (barra superior) -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- ifRoom: se muestra como icono si hay sitio en la barra -->
+    <item
+        android:id="@+id/action_cambiar_vista"
+        android:icon="@drawable/ic_grid_view"
+        android:title="@string/ver_cuadricula"
+        app:showAsAction="ifRoom" />
+
+    <!-- EJERCICIO: ordena la lista de prioridad alta a baja -->
+    <item
+        android:id="@+id/action_ordenar_prioridad"
+        android:title="@string/ordenar_prioridad"
+        app:showAsAction="never" />
+
+    <!-- never: siempre dentro del menú de tres puntos -->
+    <item
+        android:id="@+id/action_borrar_completadas"
+        android:title="@string/borrar_completadas"
+        app:showAsAction="never" />
+</menu>
