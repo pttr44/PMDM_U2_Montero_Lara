@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Ejercicio 2: opción marcable que activa / desactiva el filtro -->
+    <item
+        android:id="@+id/action_pendientes"
+        android:checkable="true"
+        android:title="@string/ver_solo_pendientes"
+        app:showAsAction="never" />
+</menu>
