@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="prioridad_alta">#C62828</color>
+    <color name="prioridad_media">#EF6C00</color>
+    <color name="prioridad_baja">#2E7D32</color>
+    <color name="ic_launcher_background">#3F51B5</color>
+</resources>
