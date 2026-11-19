@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/FirstFragment">
+
+    <fragment
+        android:id="@+id/FirstFragment"
+        android:name="com.ejemplo.enrutamientoavanzado.FirstFragment"
+        android:label="@string/first_fragment_label"
+        tools:layout="@layout/fragment_first">
+
+        <!-- Ruta hacia la pantalla 2 -->
+        <action
+            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            app:destination="@id/SecondFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SecondFragment"
+        android:name="com.ejemplo.enrutamientoavanzado.SecondFragment"
+        android:label="@string/second_fragment_label"
+        tools:layout="@layout/fragment_second">
+
+        <!-- Argumento que esta pantalla recibe (Ejercicio 2: con valor por defecto) -->
+        <argument
+            android:name="tituloNota"
+            android:defaultValue="Sin título"
+            app:argType="string" />
+
+        <!-- Deep link: abre esta pantalla desde fuera de la app -->
+        <deepLink app:uri="notas://detalle/{tituloNota}" />
+
+        <!-- Ejercicio 3: ruta hacia la pantalla de confirmación -->
+        <action
+            android:id="@+id/action_SecondFragment_to_ThirdFragment"
+            app:destination="@id/ThirdFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ThirdFragment"
+        android:name="com.ejemplo.enrutamientoavanzado.ThirdFragment"
+        android:label="@string/third_fragment_label"
+        tools:layout="@layout/fragment_third">
+
+        <!-- Argumento obligatorio (sin valor por defecto) -->
+        <argument
+            android:name="tituloNota"
+            app:argType="string" />
+
+        <!-- Vuelve directamente al inicio limpiando la pila hasta FirstFragment (incluido),
+             así no queda una pantalla 1 duplicada en la pila -->
+        <action
+            android:id="@+id/action_ThirdFragment_to_FirstFragment"
+            app:destination="@id/FirstFragment"
+            app:popUpTo="@id/FirstFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
